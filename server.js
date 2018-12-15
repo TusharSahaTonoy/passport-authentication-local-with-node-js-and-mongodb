@@ -4,7 +4,7 @@ const port          = process.env.PORT || 3000;
 const mongoose      = require('mongoose');
 const passport      = require('passport');
 const bodyParser    = require('body-parser');
-const cookieParser  = require('cookie-parser');
+
 const morgan        = require('morgan');
 const cookieSession = require('cookie-session');
 const flash         = require('connect-flash');
@@ -21,7 +21,6 @@ app.use(cookieSession({
     maxAge:24*60*60*1000,
     keys:[keys.session.cookieKey]
 }));
-app.use(cookieParser());
 
 //template engine
 app.set('view engine','ejs');
